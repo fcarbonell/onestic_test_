@@ -1,0 +1,25 @@
+<div class="show_filters">
+    <div class="button_show_filters"> SHOW FILTERS </div>
+    <div class="button_hide_filters"> X </div>
+</div>
+<div class="filters">
+    <div class="container">
+        <div class="sizes">
+            <div class="title">Size </div>   
+            {% for size in filters.sizes %}
+                <div class="box_filter fs filtersize_{{size.size}}">{{size.size}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="colors">
+            <div class="title">Color </div>   
+            {% for color in filters.colors %}
+                <div class="box_filter fc filtercolor_{{color.color}}" style="background-color:{{color.color}}"></div>
+            {% endfor %}
+            <div class="reset"> reset </div>
+        </div>
+        <div class="sort icon_sort">
+            SORT
+        </div>        
+    </div>
+</div>

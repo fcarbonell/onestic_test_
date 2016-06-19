@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include 'default/header.html.twig' %}
+{% endblock %}
+
+{% block filter %}
+	{% set filters = {'sizes': sizes, 'colors': colors} %}    
+    {% include 'default/filter.html.twig' with filters %}
+{% endblock %}
+
+{% block body %}
+    {% set vars = {'products': products} %}
+    {% include 'default/list.html.twig' with vars %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'default/footer.html.twig' %}    
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/onestic.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/style_min.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/style_menu.css') }}" />
+{% endblock %}

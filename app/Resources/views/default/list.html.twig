@@ -1,0 +1,21 @@
+<div class="products">
+    <div class="container list">
+        {% for product in vars.products %}
+            {# Only 10 words in description #}
+            {% set description = product.description|split(' ', 11) %}
+            {% set description_ten = description[0:10] %}
+            {% set description_value = description_ten|join(' ') %}
+
+            <div class="box color_{{product.color}} size_{{product.size}}">
+                <img class="list_img" src="http://clasionce-static.elonce.com/images/publicar-anuncio-gratis.png" alt="imagen no disponible" title="imagen no disponible">
+                <div class="title">{{product.name}}</div>
+                <div class="description">
+                {{ description_value ~ '...' }}
+                </div>
+                <div class="description color">Color: {{product.color}}</div>
+                <div class="description size">Size: {{product.size}}</div>
+                <div class="price">{{product.price}}€</div>
+            </div>
+        {% endfor %}    
+    </div>
+</div>
